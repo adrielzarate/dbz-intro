@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dbz</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        body {
+            background: linear-gradient(to bottom, #3eb3d6 0%,#8dc3d6 100%);
+        }
+        .bg-mountain {
+            background: linear-gradient(to bottom, #1a71bf 0%, #8dc3d6 100%);
+            position: absolute;
+            bottom: 0;
+        }
+        .bg-mountain-1 {
+            border-top-left-radius: 220px 380px;
+            border-top-right-radius: 170px 270px;
+        }
+        .bg-mountain-2 {
+            border-top-left-radius: 150px 210px;
+            border-top-right-radius: 70px 110px;
+        }
+        .bg-mountain-3 {
+            border-top-left-radius: 170px 270px;
+            border-top-right-radius: 220px 380px;
+        }
+        .bg-mountain-4 {
+            border-radius: 220px 320px 0 0;
+        }
+        .size-xs {
+            width: 50px;
+            height: 75px;
+        }
+        .size-sm {
+            width: 90px;
+            height: 170px;
+        }
+        .size-md {
+            width: 100px;
+            height: 250px;
+        }
+        .size-lg {
+            width: 110px;
+            height: 300px;
+        }
+        .pos-l {
+            left: 0;
+        }
+        .pos-l-2 {
+            left: 5%;
+        }
+        .pos-l-3 {
+            left: 25%;
+        }
+        .pos-c {
+            left: 50%;
+            margin-left: -75px;
+        }
+        .pos-c-2 {
+            left: 50%;
+            margin-left: -15px;
+        }
+        .pos-r {
+            right: 0;
+        }
+        .blockToRight {
+            position: absolute;
+            bottom: 0;
+            animation: toRight 1s ease-in infinite;
+        }
+        .blockToLeft {
+            position: absolute;
+            bottom: 0;
+            animation: toLeft 1s ease-in infinite;
+        }
+        .blockToRight-2 {
+            position: absolute;
+            bottom: 0;
+            animation: toRight_b 1s ease-in infinite;
+        }
+        .blockToLeft-2 {
+            position: absolute;
+            bottom: 0;
+            animation: toLeft_b .7s ease-in infinite;
+        }
+        .blockToRight-3 {
+            position: absolute;
+            bottom: 0;
+            animation: toRight_c .8s ease-in infinite;
+        }
+        .delay1 {
+            animation-delay: .1s;
+        }
+        .delay2 {
+            animation-delay: .2s;
+        }
+        .delay6 {
+            animation-delay: .6s;
+        }
+        .delay4 {
+            animation-delay: .4s;
+        }
+        .mountain-1 {
+            background: url(mountain-1.png);
+            background-size: 100% 100%;
+        }
+        .mountain-2 {
+            background: url(mountain-2.png);
+            background-size: 100% 100%;
+        }
+        .tree-1 {
+            background: url(tree-1.png);
+            background-size: 100% 100%;
+        }
+        @keyframes toRight {
+            from {
+                left: 50%;
+                margin-left: -1.5%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                left: 90%;
+                width: 40%;
+                height: 110%;
+            }
+        }
+        @keyframes toLeft {
+            from {
+                margin-right: -1.5%;
+                right: 50%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                right: 90%;
+                width: 40%;
+                height: 110%;
+            }
+        }
+
+        @keyframes toRight_b {
+            from {
+                left: 60%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                left: 100%;
+                width: 70%;
+                height: 180%;
+            }
+        }
+        @keyframes toLeft_b {
+            from {
+                right: 60%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                right: 90%;
+                width: 40%;
+                height: 110%;
+            }
+        }
+
+        @keyframes toRight_c {
+            from {
+                left: 60%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                left: 90%;
+                width: 60%;
+                height: 130%;
+            }
+        }
+        @keyframes toLeft_c {
+            from {
+                right: 60%;
+                width: 3%;
+                height: 9%;
+            }
+            to {
+                right: 20%;
+                width: 40%;
+                height: 110%;
+            }
+        }
+        @keyframes sphere_m {
+            0% {
+                top: 10vh;
+            }
+            50% {
+                top: 15vh;
+            }
+            100% {
+                top: 10vh;
+            }
+        }
+        .sphere {
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(ellipse at center left, #d87729 30%, #c81e14 90%);
+            position: absolute;
+            left: 50%;
+            margin-left: -25vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 24px 0px 11px -4px #daa659;
+            animation: sphere_m 3s ease-in infinite;
+        }
+        .sphere::before {
+            content: "";
+            width: 3.5vw;
+            height: 4vw;
+            border-radius: 50%;
+            background-color: #f1e2c1;
+            position: absolute;
+            left: 14%;
+            top: 20%;
+        }
+        .sphere div {
+            width: 33vw;
+        }
+        .sphere .star {
+            display: inline-block;
+            color: #c81e14;
+            font-size: 12vw;
+            width: 16vw;
+            height: 16vw;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-mountain bg-mountain-1 size-md pos-l"></div>
+    <div class="bg-mountain bg-mountain-2 size-xs pos-l-2"></div>
+    <div class="bg-mountain bg-mountain-3 size-sm pos-l-3"></div>
+    <div class="bg-mountain bg-mountain-1 size-sm pos-c-2"></div>
+    <div class="bg-mountain bg-mountain-1 size-xs pos-c"></div>
+    <div class="bg-mountain bg-mountain-4 size-lg pos-r"></div>
+
+
+    <div class="mountain-1 blockToLeft delay1"></div>
+    <div class="mountain-2 blockToLeft-2"></div>
+    <div class="tree-2     blockToLeft-2 delay6"></div>
+
+    <div class="mountain-2 blockToRight delay2"></div>
+    <div class="mountain-1 blockToRight-2"></div>
+    <div class="tree-1     blockToRight delay4"></div>
+
+    <div class="sphere">
+        <div>
+            <div class="star">★</div>
+            <div class="star">★</div>
+            <div class="star">★</div>
+            <div class="star">★</div>
+        </div>
+    </div>
+
+</body>
+</html>
